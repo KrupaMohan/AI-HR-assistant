@@ -79,3 +79,11 @@ def render_upload():
 def render_results():
     st.write("Rendering RESULTS page")
     # ...
+
+def extract_categories(text):
+    # ... existing code ...
+    for category, pattern in patterns.items():
+        # ... existing code ...
+        categories[category] = ' '.join(category_text) if category_text else ''
+        print(f"{category}: {categories[category]}")  # Add this line for debugging
+    return categories

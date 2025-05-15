@@ -33,11 +33,9 @@ def extract_categories(text):
     """Extract different categories of information from text"""
     # Define regex patterns for different categories
     patterns = {
-        'education': r'(?i)(degree|bachelor|master|phd|diploma|certification|university|college|school|education|academic)',
-        'experience': r'(?i)(experience|work|job|position|role|career|employment|year|month|project|achievement|accomplishment)',
-        'skills': r'(?i)(skill|technology|software|programming|language|tool|framework|proficiency|proficient|knowledge|expertise)',
-        'projects': r'(?i)(project|portfolio|github|implementation|developed|built|created|designed|system)',
-        'certifications': r'(?i)(certification|certificate|certified|credential|qualification|license)',
+        'experience': r'(?i)(experience|work|job|position|role|career|employment|project|achievement|accomplishment)',
+        'skills': r'(?i)(skill|technology|software|programming|language|tool|framework|proficiency|proficient|knowledge|expertise|highlight)',
+        'communication': r'(?i)(communicat|present|collaborat|team|lead|write|speak|interpersonal|verbal|oral|listen|negotiat|customer service|client interaction|public speaking|report|explain|mentor|train|coordinate)'
     }
     
     # Extract text for each category

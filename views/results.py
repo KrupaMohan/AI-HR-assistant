@@ -51,19 +51,25 @@ def render_results():
             st.markdown(f"<div style='text-align:center; font-size:1.2rem;'><b>Selected Candidate:</b> {selected_resume}</div>", unsafe_allow_html=True)
             st.markdown(f"<div style='text-align:center; font-size:1.2rem;'><b>Match Score:</b> <span style='color:#357abd;font-weight:700'>{st.session_state.results[selected_resume]['score'] * 100:.1f}%</span></div>", unsafe_allow_html=True)
             category_scores = st.session_state.results[selected_resume]['category_scores']
-            categories = list(category_scores.keys())
-            values = [score * 100 for score in category_scores.values()]
+            match_score_percent = st.session_state.results[selected_resume]['score'] * 100
+            # Define 3 parameters for the Nightingale chart
+            parameters = ['skills', 'experience', 'rank']
+            values = [
+                category_scores.get('skills', 0) * 100,
+                category_scores.get('experience', 0) * 100,
+                match_score_percent
+            ]
             fig = go.Figure()
-            fig.add_trace(go.Scatterpolar(
+            fig.add_trace(go.Barpolar(
                 r=values,
-                theta=categories,
-                fill='toself',
-                name=selected_resume,
-                line_color='rgb(31, 119, 180)',
-                fillcolor='rgba(31, 119, 180, 0.3)'
+                theta=parameters,
+                marker_color=["#4a90e2", "#50e3c2", "#f5a623"],
+                marker_line_color="black",
+                marker_line_width=2,
+                opacity=0.8
             ))
             fig.update_layout(
-                title="Candidate Match Analysis",
+                title="Candidate Nightingale Chart",
                 polar=dict(
                     radialaxis=dict(
                         visible=True,
