@@ -1,0 +1,365 @@
+/* Modern Lighter Blue Dark Theme for Streamlit */
+:root {
+    --primary: #a5d8ff; /* lighter blue */
+    --primary-light: #e3f2fd;
+    --primary-dark: #74b9ff;
+    --secondary: #232837; /* card/container dark */
+    --accent: #b6e0fe; /* very light blue accent */
+    --success: #b6e0fe; /* blue-green for success */
+    --warning: #ffe066; /* yellow */
+    --error: #ef4444; /* red */
+    --text-primary: #f8fafc; /* almost white */
+    --text-secondary: #a0aec0; /* gray */
+    --neutral-100: #181c24; /* main background */
+    --neutral-200: #232837;
+    --neutral-300: #2d334a;
+    --neutral-400: #374151;
+    --neutral-500: #4b5563;
+    --neutral-600: #6b7280;
+    --neutral-700: #a0aec0;
+    --neutral-800: #cbd5e1;
+    --neutral-900: #f8fafc;
+}
+
+/* Global styles */
+body {
+    background-color: var(--neutral-100);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+}
+
+/* Layout containers */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    grid-column: span 6;
+}
+
+.grid-3 {
+    grid-column: span 4;
+}
+
+.grid-4 {
+    grid-column: span 3;
+}
+
+.grid-6 {
+    grid-column: span 2;
+}
+
+.grid-12 {
+    grid-column: span 12;
+}
+
+.flex-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* Card styling */
+.card, .metric-card, .stExpander, .stExpander .streamlit-expanderContent {
+    background-color: var(--secondary) !important;
+    color: var(--text-primary) !important;
+    border-radius: 1rem !important;
+    border: 1px solid var(--neutral-300) !important;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: var(--primary);
+    color: #181c24;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(165, 216, 255, 0.10);
+}
+
+.stButton > button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 8px rgba(165, 216, 255, 0.15);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload area styling */
+.upload-area {
+    background-color: var(--primary-light);
+    border: 2px dashed var(--primary);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-dark);
+    background-color: var(--neutral-100);
+}
+
+/* Dashboard elements */
+.metric-card {
+    box-shadow: none;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Chart styling */
+.chart-container {
+    background-color: var(--neutral-100);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--neutral-300);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Resume view */
+.resume-viewer {
+    font-family: 'Georgia', serif;
+    background-color: var(--neutral-100);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid var(--neutral-300);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Chatbot UI */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 500px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.chat-message {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    max-width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.user-message {
+    background-color: var(--primary-light);
+    color: var(--text-primary);
+    margin-left: auto;
+    border-top-right-radius: 0;
+}
+
+.bot-message {
+    background-color: var(--neutral-200);
+    border-top-left-radius: 0;
+}
+
+/* Header area */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--neutral-100);
+    border-bottom: 1px solid var(--neutral-300);
+}
+
+.header-logo {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Keyword pills */
+.keyword-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.keyword-pill {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0 0.25rem 0.25rem 0;
+    box-shadow: 0 2px 4px rgba(165, 216, 255, 0.08);
+    display: inline-block;
+}
+
+/* Sidebar styling */
+.stSidebar, .sidebar .sidebar-content {
+    background-color: var(--neutral-200) !important;
+    border-right: 1px solid var(--primary) !important;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+}
+
+.status-success {
+    background-color: var(--success);
+    color: white;
+}
+
+.status-warning {
+    background-color: var(--warning);
+    color: var(--text-primary);
+}
+
+.status-error {
+    background-color: var(--error);
+    color: white;
+}
+
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .grid-2, .grid-3, .grid-4, .grid-6 {
+        grid-column: span 12;
+    }
+    
+    .metric-card {
+        margin-bottom: 1rem;
+    }
+    
+    .chat-message {
+        max-width: 90%;
+    }
+    
+    .header-logo {
+        font-size: 1.5rem;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
+/* Prevent Streamlit expander and textarea from turning white on hover/focus */
+.stExpander, .stExpander:hover, .stExpander:focus {
+    background-color: var(--neutral-100) !important;
+}
+.stExpander .streamlit-expanderContent, .stExpander .streamlit-expanderContent:hover, .stExpander .streamlit-expanderContent:focus {
+    background-color: var(--neutral-100) !important;
+}
+/* Fix resume text area in expander for dark mode */
+textarea, textarea:focus, textarea:active, textarea:hover, textarea[disabled] {
+    background-color: var(--neutral-200) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--primary) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 0 0 2px var(--primary-light) !important;
+    opacity: 1 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.stSelectbox, .stTextInput, .stTextArea {
+    background-color: var(--neutral-200) !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid var(--neutral-300) !important;
+    color: var(--text-primary) !important;
+    font-size: 1rem !important;
+}
+
+.stSelectbox > div, .stTextInput > div, .stTextArea > div {
+    background-color: var(--neutral-200) !important;
+    border-radius: 0.75rem !important;
+}
+
+.stMarkdown, .stMarkdown p {
+    color: var(--text-primary) !important;
+    font-size: 1.05rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card, .metric-card {
+        padding: 1rem;
+    }
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}
