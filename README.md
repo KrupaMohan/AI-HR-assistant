@@ -19,6 +19,16 @@ This project helps recruiters and job seekers by:
 - **Keyword Matching**: Identifies key terms from the job description present in resumes
 - **Interactive Results**: View detailed matching scores and analysis in an interactive dashboard
 
+// ... existing code ...
+3. Upload resumes and a job description, then view the matching results
+
+## Live Demo
+
+The application is deployed on Streamlit Cloud and can be accessed at:
+[Resume Matcher App](https://resume-matcher.streamlit.app)
+
+You can try out the application directly in your browser without any local setup!
+
 ## Setup
 
 ### Prerequisites
