@@ -25,7 +25,7 @@ This project helps recruiters and job seekers by:
 ## Live Demo
 
 The application is deployed on Streamlit Cloud and can be accessed at:
-[AI HR Assistant](https://resume-matcher.streamlit.app)
+[AI HR Assistant](https://ai-hr-assistant.streamlit.app/)
 
 You can try out the application directly in your browser without any local setup!
 
